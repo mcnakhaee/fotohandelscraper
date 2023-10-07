@@ -13,43 +13,43 @@ page <- read_html("https://fotohandeldelfshaven.nl/product/rolleicord-rolleiflex
 ```
 
 ```{r}
-price <- page %>% 
-  html_element(xpath = '//*[contains(concat( " ", @class, " " ), concat( " ", "price", " " ))]') %>% 
+price <- page |>
+  html_element(xpath = '//*[contains(concat( " ", @class, " " ), concat( " ", "price", " " ))]') |>
   html_text()
 
-title <- page %>% 
-  html_element(xpath = '//*[contains(concat( " ", @class, " " ), concat( " ", "entry-title", " " ))]') %>% 
+title <- page |>
+  html_element(xpath = '//*[contains(concat( " ", @class, " " ), concat( " ", "entry-title", " " ))]') |>
   html_text()
 
-desc <- page %>% 
-  html_element(xpath = '//*[contains(concat( " ", @class, " " ), concat( " ", "woocommerce-product-details__short-description", " " ))]//p') %>% 
+desc <- page |>
+  html_element(xpath = '//*[contains(concat( " ", @class, " " ), concat( " ", "woocommerce-product-details__short-description", " " ))]//p') |>
 html_text()
 ```
 
 ```{r}
-condition <- page %>% 
-  html_element(xpath = '//*+[contains(concat( " ", @class, " " ), concat( " ", "condition-header", " " ))]//*[contains(concat( " ", @class, " " ), concat( " ", "condition-rating", " " ))]//*[contains(concat( " ", @class, " " ), concat( " ", "star", " " ))]') %>% 
+condition <- page |>
+  html_element(xpath = '//*+[contains(concat( " ", @class, " " ), concat( " ", "condition-header", " " ))]//*[contains(concat( " ", @class, " " ), concat( " ", "condition-rating", " " ))]//*[contains(concat( " ", @class, " " ), concat( " ", "star", " " ))]') |>
   html_text()
 ```
 
 ```{r}
 list_page <- 'https://fotohandeldelfshaven.nl/winkel/?orderby=date'
 get_df <- function(list_page){
-  titles <-   read_html(list_page) %>% 
-  html_elements(xpath = '//*[contains(concat( " ", @class, " " ), concat( " ", "woocommerce-loop-product__title", " " ))]') %>% 
+  titles <-   read_html(list_page) |>
+  html_elements(xpath = '//*[contains(concat( " ", @class, " " ), concat( " ", "woocommerce-loop-product__title", " " ))]') |>
   html_text()
 
- links <- read_html(list_page) %>% 
-  html_elements(xpath = '//*[contains(concat( " ", @class, " " ), concat( " ", "hongo-LoopProduct-link", " " ))]') %>% 
+ links <- read_html(list_page) |>
+  html_elements(xpath = '//*[contains(concat( " ", @class, " " ), concat( " ", "hongo-LoopProduct-link", " " ))]') |>
   html_attr("href")
  
-text <- read_html(list_page) %>% 
-  html_elements(xpath = '//*[contains(concat( " ", @class, " " ), concat( " ", "product-content-wrap", " " ))]') %>% 
+text <- read_html(list_page) |>
+  html_elements(xpath = '//*[contains(concat( " ", @class, " " ), concat( " ", "product-content-wrap", " " ))]') |>
   html_text()
   
   
-prices <-   read_html(list_page) %>% 
-  html_elements(xpath = '//*[contains(concat( " ", @class, " " ), concat( " ", "price", " " ))]') %>% 
+prices <-   read_html(list_page) |>
+  html_elements(xpath = '//*[contains(concat( " ", @class, " " ), concat( " ", "price", " " ))]') |>
   html_text()
 
 df_item <- data.frame(titles,links,text,prices)
@@ -85,7 +85,7 @@ today_date <- Sys.Date()
 ```{r}
 d <- read_csv('fotohandeldelfshaven2023-10-05.csv')
 
-d %>% 
+d |>
   filter(str_detect(prices, "Sold"))
 
 
@@ -107,8 +107,8 @@ test_path <- 'https://fotohandeldelfshaven.nl/product/hasselblad-501c-m-chrome-c
 
 xpath_mechanical <- '//*[contains(concat( " ", @class, " " ), concat( " ", "condition-rating", " " )) and (((count(preceding-sibling::*) + 1) = 4) and parent::*)]//*[contains(concat( " ", @class, " " ), concat( " ", "condition-description", " " ))]'
 
- read_html(test_path) %>% 
-  html_element(xpath =xpath_optical ) %>% 
+ read_html(test_path) |>
+  html_element(xpath =xpath_optical ) |>
   html_text()
-git ```
+```
 
