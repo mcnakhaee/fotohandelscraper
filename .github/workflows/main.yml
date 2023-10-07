@@ -1,0 +1,26 @@
+name: Run R script on commit
+
+on:
+  push:
+    branches:
+      - main  # Change this to the main branch name of your repository
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up R
+      uses: r-lib/actions/setup-r@v1
+      with:
+        r-version: 4.x  # You can specify the R version you need
+
+    - name: Install R packages
+      run: |
+        Rscript -e "install.packages(c('rvest', 'dplyr', 'tidyr', 'readr'), repos='https://cran.rstudio.com/')"
+
+    - name: Run R script
+      run: Rscript scraper.r
