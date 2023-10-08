@@ -1,7 +1,7 @@
 {
     "id": "1BA6F9E4",
-    "path": "P:/mcnakhaee/Projects/fotohandelscraper/scraper.r",
-    "project_path": "scraper.r",
+    "path": "P:/mcnakhaee/Projects/fotohandelscraper/scraper_w.r",
+    "project_path": "scraper_w.r",
     "type": "r_source",
     "hash": "3502437780",
     "contents": "",
@@ -17,11 +17,11 @@
         "scrollLine": "25"
     },
     "folds": "",
-    "lastKnownWriteTime": 1696752494,
+    "lastKnownWriteTime": 1696753237,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1696752494530,
+    "last_content_update": 1696753237270,
     "read_only": false,
     "read_only_alternatives": []
 }
