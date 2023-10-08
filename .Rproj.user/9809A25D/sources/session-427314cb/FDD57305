@@ -3,7 +3,7 @@
     "path": "P:/mcnakhaee/Projects/fotohandelscraper/.github/workflows/main.yml",
     "project_path": ".github/workflows/main.yml",
     "type": "yaml",
-    "hash": "3257020213",
+    "hash": "2458373388",
     "contents": "",
     "dirty": false,
     "created": 1696719511851.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "28,0",
+        "cursorPosition": "28,17",
         "scrollLine": "8"
     },
     "folds": "",
-    "lastKnownWriteTime": 1696754985,
+    "lastKnownWriteTime": 1696755373,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1696754985601,
+    "last_content_update": 1696755373605,
     "read_only": false,
     "read_only_alternatives": []
 }
