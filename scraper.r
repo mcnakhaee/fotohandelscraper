@@ -33,7 +33,7 @@ df_item_first <- get_df(list_page)
 
 
 
-for (p in 2:241) {
+for (p in 2:245) {
   #Sys.sleep(1)
   page <- paste('https://fotohandeldelfshaven.nl/winkel/page/',p,'/?orderby=date',sep = '')
   print(page)
