@@ -8,7 +8,6 @@ library(fs)  # For working with the file system
 library(purrr)
 library(magrittr)
 library(stringr)
-contains_x <- grepl(x, my_string)
 
 
 get_price_info <- function(...) {
