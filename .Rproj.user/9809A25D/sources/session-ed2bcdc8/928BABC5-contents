@@ -91,12 +91,15 @@ all_recent_data <- bind_rows(df_item_first, latest_data) |>
   distinct_all() |>
   mutate(prices = str_to_lower(str_replace_all(prices, " ", "")),
          prices = str_to_lower(str_replace_all(prices, "price:", "")),
-  )
+  ) %>% 
+  distinct()
 # Apply the function to each row and store the results in a new column
 #all_recent_data2 <- all_recent_data %>%
 all_recent_data_sold_info <- all_recent_data %>%
   mutate(
     new_price = pmap_chr(., get_price_info),
+    new_price = str_to_lower(str_replace_all(new_price, " ", "")),
+    new_price = str_to_lower(str_replace_all(new_price, "price:", "")),
     date_sold = if_else(
       new_price != prices,
       as.character(Sys.Date()),
@@ -107,4 +110,3 @@ all_recent_data_sold_info <- all_recent_data %>%
 today_date <- Sys.Date()
 all_recent_data_sold_info |> write_csv(paste('data/fotohandeldelfshaven', '_', today_date, '.csv', sep = ''))
 
-'//*[contains(concat( " ", @class, " " ), concat( " ", "woocommerce-product-details__short-description", " " ))]//p'
