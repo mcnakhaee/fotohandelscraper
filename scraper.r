@@ -101,11 +101,10 @@ all_recent_data_sold_info <- all_recent_data %>%
     new_price = str_to_lower(str_replace_all(new_price, " ", "")),
     new_price = str_to_lower(str_replace_all(new_price, "price:", "")),
     date_sold = if_else(
-      new_price != prices,
+      (new_price =='sold') &( prices!='sold') ,
       as.character(Sys.Date()),
-      'not_sold_sold_before'
-    )
-  )
+      if_else(date_sold!='not_sold_sold_before',date_sold,'not_sold_sold_before')
+    ))
 
 today_date <- Sys.Date()
 all_recent_data_sold_info |> write_csv(paste('data/fotohandeldelfshaven', '_', today_date, '.csv', sep = ''))
