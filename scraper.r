@@ -92,20 +92,19 @@ df_item_first <- df_item_first |>
 
 all_recent_data <- bind_rows(df_item_first, latest_data) |>
   distinct_all() |>
-  mutate(prices = str_to_lower(str_replace_all(prices, " ", "")),
-         prices = str_to_lower(str_replace_all(prices, "price:", "")),
-  ) %>% 
   distinct()
 # Apply the function to each row and store the results in a new column
 #all_recent_data2 <- all_recent_data %>%
 all_recent_data_sold_info <- all_recent_data %>%
+  mutate(prices = str_to_lower(str_replace_all(prices, " ", "")),
+         prices = str_to_lower(str_replace_all(prices, "price:", ""))) %>% 
   mutate(
     date_sold = yesterday,
     new_price = pmap_chr(., get_price_info),
     new_price = str_to_lower(str_replace_all(new_price, " ", "")),
     new_price = str_to_lower(str_replace_all(new_price, "price:", ""))) %>% 
   mutate(
-      date_sold_new = if_else((new_price =='sold') &( prices!='sold'),as.character(Sys.Date()),date_sold)) %>% 
+      date_sold_new = if_else((new_price =='sold') &( prices!='sold'),as.character(Sys.Date()),as.character(date_sold))) %>% 
   mutate(date_sold = date_sold_new)
 
 
