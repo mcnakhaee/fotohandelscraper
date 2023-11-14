@@ -8,7 +8,10 @@ library(fs)  # For working with the file system
 library(purrr)
 library(magrittr)
 library(stringr)
+library(lubridate)
 
+# Get the date of yesterday
+yesterday <- Sys.Date() - days(1)
 
 get_price_info <- function(...) {
   args <- list(...)
@@ -89,23 +92,22 @@ df_item_first <- df_item_first |>
 
 all_recent_data <- bind_rows(df_item_first, latest_data) |>
   distinct_all() |>
-  mutate(prices = str_to_lower(str_replace_all(prices, " ", "")),
-         prices = str_to_lower(str_replace_all(prices, "price:", "")),
-  ) %>% 
   distinct()
 # Apply the function to each row and store the results in a new column
 #all_recent_data2 <- all_recent_data %>%
 all_recent_data_sold_info <- all_recent_data %>%
+  mutate(prices = str_to_lower(str_replace_all(prices, " ", "")),
+         prices = str_to_lower(str_replace_all(prices, "price:", ""))) %>% 
   mutate(
+    date_sold = yesterday,
     new_price = pmap_chr(., get_price_info),
     new_price = str_to_lower(str_replace_all(new_price, " ", "")),
-    new_price = str_to_lower(str_replace_all(new_price, "price:", "")),
-    date_sold = if_else(
-      new_price != prices,
-      as.character(Sys.Date()),
-      'not_sold_sold_before'
-    )
-  )
+    new_price = str_to_lower(str_replace_all(new_price, "price:", ""))) %>% 
+  mutate(
+      date_sold_new = if_else((new_price =='sold') &( prices!='sold'),as.character(Sys.Date()),as.character(date_sold))) %>% 
+  mutate(date_sold = date_sold_new)
+
+
 
 today_date <- Sys.Date()
 all_recent_data_sold_info |> write_csv(paste('data/fotohandeldelfshaven', '_', today_date, '.csv', sep = ''))
