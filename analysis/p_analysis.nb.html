@@ -1754,51 +1754,155 @@ display: none;
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5cbmBgYCJ9 -->
-<pre class="r"><code>library(tidyverse)
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5gYGAifQ== -->
+<pre class="r"><code>library(tidyverse)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoi4pSA4pSAIEF0dGFjaGluZyBjb3JlIHRpZHl2ZXJzZSBwYWNrYWdlcyDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAgdGlkeXZlcnNlIDIuMC4wIOKUgOKUgFxu4pyUIGRwbHlyICAgICAxLjEuMiAgICAg4pyUIHJlYWRyICAgICAyLjEuNFxu4pyUIGZvcmNhdHMgICAxLjAuMCAgICAg4pyUIHN0cmluZ3IgICAxLjUuMFxu4pyUIGdncGxvdDIgICAzLjQuMiAgICAg4pyUIHRpYmJsZSAgICAzLjIuMVxu4pyUIGx1YnJpZGF0ZSAxLjkuMiAgICAg4pyUIHRpZHlyICAgICAxLjMuMFxu4pyUIHB1cnJyICAgICAxLjAuMSAgICAg4pSA4pSAIENvbmZsaWN0cyDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAgdGlkeXZlcnNlX2NvbmZsaWN0cygpIOKUgOKUgFxu4pyWIGRwbHlyOjpmaWx0ZXIoKSBtYXNrcyBzdGF0czo6ZmlsdGVyKClcbuKcliBkcGx5cjo6bGFnKCkgICAgbWFza3Mgc3RhdHM6OmxhZygpXG7ihLkgVXNlIHRoZSBcdTAwMWJdODs7aHR0cDovL2NvbmZsaWN0ZWQuci1saWIub3JnL1x1MDAwN2NvbmZsaWN0ZWQgcGFja2FnZVx1MDAxYl04OztcdTAwMDcgdG8gZm9yY2UgYWxsIGNvbmZsaWN0cyB0byBiZWNvbWUgZXJyb3JzXG4ifQ== -->
-<pre><code>── Attaching core tidyverse packages ──────────────────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.2     ✔ readr     2.1.4
-✔ forcats   1.0.0     ✔ stringr   1.5.0
-✔ ggplot2   3.4.2     ✔ tibble    3.2.1
-✔ lubridate 1.9.2     ✔ tidyr     1.3.0
-✔ purrr     1.0.1     ── Conflicts ────────────────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the ]8;;http://conflicted.r-lib.org/conflicted package]8;; to force all conflicts to become errors</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZCA8LSAgcmVhZF9jc3YoJy4uL2RhdGEvZm90b2hhbmRlbGRlbGZzaGF2ZW5fMjAyMy0xMS0wNy5jc3YnKVxuXG5gYGAifQ== -->
-<pre class="r"><code>d &lt;-  read_csv(&#39;../data/fotohandeldelfshaven_2023-11-07.csv&#39;)
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZCA8LSAgcmVhZF9jc3YoJy4uL2RhdGEvZm90b2hhbmRlbGRlbGZzaGF2ZW5fMjAyMy0xMS0wOS5jc3YnKVxuYGBgIn0= -->
+<pre class="r"><code>d &lt;-  read_csv(&#39;../data/fotohandeldelfshaven_2023-11-09.csv&#39;)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUm93czogNTU0OCBDb2x1bW5zOiA34pSA4pSAIENvbHVtbiBzcGVjaWZpY2F0aW9uIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgFxuRGVsaW1pdGVyOiBcIixcIlxuY2hyICg2KTogdGl0bGVzLCBsaW5rcywgdGV4dCwgcHJpY2VzLCBuZXdfcHJpY2UsIGRhdGVfc29sZFxuZGJsICgxKTogbl9wYWdlXG7ihLkgVXNlIGBzcGVjKClgIHRvIHJldHJpZXZlIHRoZSBmdWxsIGNvbHVtbiBzcGVjaWZpY2F0aW9uIGZvciB0aGlzIGRhdGEuXG7ihLkgU3BlY2lmeSB0aGUgY29sdW1uIHR5cGVzIG9yIHNldCBgc2hvd19jb2xfdHlwZXMgPSBGQUxTRWAgdG8gcXVpZXQgdGhpcyBtZXNzYWdlLlxuIn0= -->
-<pre><code>Rows: 5548 Columns: 7── Column specification ────────────────────────────────────────────────────────────────────
-Delimiter: &quot;,&quot;
-chr (6): titles, links, text, prices, new_price, date_sold
-dbl (1): n_page
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6NiwibmNvbCI6Nywic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyI2IMOXIDciXX19LCJyZGYiOiJINHNJQUFBQUFBQUFCczFZM1k0YlJSWjJRaWJaV0JwQUFvbmJvNVZXQ3NMZG5uSGtNTW9OUkpCWmRqTXppY2pBSm5BUmxidXI3V0txcTd4VjFlUHhYaUZlWVMvMkpmWWQ5aFhnRGRBK3hsNFF2bFBkN2JFYndvNjVRRmpqZG5kVm5aLzZ2dk5UUFo5Ky9PeHUvMW0vMSt1OTFydnhHcTQ3dU8zdGZIWjZtQnowZWpldTQrRmE3MGJ2TnY5ZVlQb3QzTnpDOTAxOGJ6WVQ3enl5QzBGUDFRWFpLaFFxcFBUNHM5T2poNmZOOVA2UlZKa2dYTU0vNkdsVmxpcHoxdEE0Sytsd09LTENPcXBYSEE4MkJmOTBaQVBaZ2c3b3IySXVqUFNTbkRCVFdTaVRTMGVaS0tVVHZsazhlaUpORUJrVXN5T25SM1NtQWkyR2RDeVhXUHZZU1Iva0ZLYkc2VDBhMG5odnJ5d2J5ZkdKeW1EOXVmQXo5dUw1NFlhVjl4cEg5OU1EMHRMNGpvOS9iSHc4RjA3Wnl0T0pPb01MaHlTeVRIcHZuWksrZzlZSHN4RG0vdjV3V05oZ1p3SkdOUDRLUHhQbjBxUkdEK2ZPNWxVV2htZEFOZkhxSXFsUjVSOHR3N0JSOC95cWFqUmptMmhHUC9FdCtnazJsUlRKS0FINlNiMmk3Qmc0dWJJQkM5K0s1Q0Q1cW1FcFdjTXZhVmhxdFQ2N3F0WjVRMmRFSU9nRWRDYUxwR1EyRTl1eW1ZeVRlMG5rc3RYLzVWWDFHeVk5V2Rha0o4dGl3K2thblgzc2lTbnZBUE5vUzJDYTBFZ01od2JVcm9YR2NCVWJ2YStoK3RxLytxOUlwZDMrYnYrSlU1bThULy85NXQranZiM0IzdDdwVEhsNjlQaHZEd2dRRWU2OTFUa0pUNW5WV21iQk9rOHF5RExGbFp6OGU2VUFHd255MHAxREV3VkxFMGxGcGZXU0tpOG1XdEpDaFJrVlNwY2twa0tabEo0NEdjS1NwdGJtVU90TEdWVG1VL3JJbGxBVlY0ZVpySjI0bTQ2UldQdGprQkVUcFo3MnVwcE9sY2ZOckFwQnVyUldINEMybjFzWHFGVFRXU0RHRGx2d2xkeFFQblZxbnRMVFpsODFEVTNleHdVWW9ZVndVQmFXTExpeDc5MytnenpuWFdiQ2hWZmdlaXd3SjgySlBaZmxCTm4rL29CR2U2TzczZWVHbnYvMHR5NWxIZUxHVEJ6N0tlWmVNZUwxOGxWZTB2RTZkZ0NpQmdXUS8xa0w3NWxsUVJQd21WY2V2Q2pqVlM0Sk1VZ0xXd0VsSXlXZ0lrUWdaVm9Lbzh5MDRYa3VYUUZ3V21LUGNVVlFDQStiN0hZcHp1SmFqcW5vZ1RBdDNrMDRzMjBtTzJ1OHgycS9SQnFXQTZEdDZWeTZaWDN4UVJWRjlJbTlZWWQxWFNOaFp4VjI4Z0loa0FWNFN5bC9Oc2phR3VYdGFQeXVmNlhHc2tuZC9xaWxEaWdxdUJQbHUyTEN0emwwZ2EzVi9VSm9EWGhCRXhDUDlsTDZpNkdwTkRDaUdWS1lGMDYyeENvSFlobTkwdm9JL2dTcHVZUmFxSW4weHJCb2s1Z1hycGhPNlJPN2tDQmhUZXRFaWdxRVZMcGJGank3a2VrcTU0aHgyT1JoOVJXRCt2bG8wQ1lyVTVtZExRZmtDdGczdVYyQVN1dmxZTlVzajVibWdndndIdDFwWlFvdU0rL1N5Y1BISHoxSXZxQTd1VVUyL3h6SlYrRmdPMkwvMmQvK0VOQmgrZDZxc25aVlpaZGxDY1ZIS0pDamdiV20ydVAwRkxteGdRRk5VSjFpeGxRdWNMcGhJNTRqaHhQSldrQzVpS1U1QW1TQVJsMktNdzJFVThLNi9kRTR5bCt5SVphb2d1aU1BMW9BL2hraUtnY0xRVGFaV1JmR0xGYUNDb0QrSkZKRVU4azVZRGJaMkI2NDdhajV2dityVGxtZDhubkE3RHdVRGpDMWl0YTFSSEs0V2RTMlN1RmlVZU1TaHdJU0xqdkpXaXJNbGN4aWFob3NXOWhhQWtEa2lyTThwWFZhSTFQTWJRUnphU3RBeDVtTVNLaVFKN1Y5ZVRHM3ZnSmlBNXBkWmlNbUplUUNBNWxIOGNKV0ptK3FvWEpPVGlzdFhKeXBES1FNaVZDWEFEL25NcHJTRWJTNTVnbm55MUFKRGhjL3N3Z2R3ZEdtSnhESUVUdW40a3orWE1yOUtncTI0L25iL3Y4L0VHK1NlcGx4M0NhQVBPZUtYOG5EeGR5V0t6Vk9haEVSdkZSSGlNczVmRndyYVBjUjZUa2lHZ3R4WkFId09RcXA4bVdUcTNTbk1qVVQ3NmIwOFZHeUQ2d1IvYk1TSW9QNmdBSmlEVkpjT2pRNlBIRE5LOUNCK1J4alFYOHU1aHdRek5ZSWFBa3c3T0t5cGtMVTdtbzd0U250eHlKZVYzSHVYVTgwRjROMWY5TFlJekNJcEsyRGd6TjNNVU1FSUNMTlpUaUNsUGFRTnhHT08za0U3ZFhWOVJkWXVES3Y2eWZVM3UzVjhYTjlZTndacUp2bCtzQzlyc2pCMnNBZjJqREEvZXRzN0VQN0liK0c5cTc2KzFzN3VmNCs5elpLOXd0bXBiNU1KRGlXdjZ1NXpkZjRIWU0yMGI2VTNtb0did2FGczE3N0xyMmpsVGxySDI0RW5OWGFaWE5PMjNibXBua3hGOVBXOW0wakZ5L2lmRHVRSTFPakl4MFBianQwdnRhTFhYeXZmNDNMeTVjdi85ZDFOZU5EYitOcU85aUhXcEVXRHZKNCtxRWpjc3ZPWTZKQUtmK3JZcWNqZk0xMUJ0Nm9ESHVTSjltc01tZkppQTNFNmZxejI5emZYTHUvVlp1OC9ySlJ0ZFBDSWMxVUdibkNVRXlrYmg1ZXg0N2pobE1BWkZvMCt4ajFhYkJCdE92NmFFenRTTnhiNzRjZkFTS1ZxcHFoRVFBQSJ9 -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["titles"],"name":[1],"type":["chr"],"align":["left"]},{"label":["links"],"name":[2],"type":["chr"],"align":["left"]},{"label":["text"],"name":[3],"type":["chr"],"align":["left"]},{"label":["prices"],"name":[4],"type":["chr"],"align":["left"]},{"label":["n_page"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["new_price"],"name":[6],"type":["chr"],"align":["left"]},{"label":["date_sold"],"name":[7],"type":["chr"],"align":["left"]}],"data":[{"1":"Kowa Six outfit. OUTLET","2":"https://fotohandeldelfshaven.nl/product/kowa-six-outfit-outlet/","3":"\\nKowa Six outfit. OUTLET\\r\\n\\r\\nPrice: €200,00This KOWA six is sold as collectors item. it requires a service to be fully usable with film again. Pretty good cosmetics. Comes with the KOWA 3.5 / 150mm lens with sluggish shutter. film transport might have issue. Comes with grip. Sold as outlet camera without warranty. Collectors item\\r\\nAdd to cartKowa Six outfit. OUTLETMaartenNovember 7, 2023November 7, 2023","4":"€200,00","5":"250","6":"€200,00","7":"not_sold_sold_before"},{"1":"Leica Leitz Summicron 5cm F/2 for Leica M, OUTLET","2":"https://fotohandeldelfshaven.nl/product/leica-leitz-summicron-5cm-f-2-for-leica-m-outlet/","3":"\\nLeica Leitz Summicron 5cm F/2 for Leica M, OUTLET\\r\\n\\r\\nPrice: €250,00Collapsible Leica summicron M lens with some issues. Glass is a bit dusty inside and would need a pro cleaning to be perfect again. Main reason for making this lens an outlet product is the collapsing system, its very very stiff and needs a lot of force to be extracted  .....\\r\\nAdd to cartLeica Leitz Summicron 5cm F/2 for Leica M, OUTLETMaartenNovember 7, 2023November 7, 2023","4":"€250,00","5":"250","6":"€250,00","7":"not_sold_sold_before"},{"1":"Lot of 8 Japanese rangefinder cameras","2":"https://fotohandeldelfshaven.nl/product/lot-of-8-japanese-rangefinder-cameras/","3":"\\nLot of 8 Japanese rangefinder cameras\\r\\n\\r\\nPrice: €120,00Collection of 8 rangefinder cameas with fixed lens, all made in Japan. In general these are a bit dirty and most probably will need some service and cleaning . However these are beautiful collectors items. Included are: Fujica V2, shutter sticky, rf window loose, Yashica Lynx-5000 (shutter fires) NEOCA-Z (does  .....\\r\\nAdd to cartLot of 8 Japanese rangefinder camerasMaartenNovember 7, 2023November 7, 2023","4":"€120,00","5":"250","6":"€120,00","7":"not_sold_sold_before"},{"1":"Pentacon Six TL kit w/ Meyer Orestegor 5.6 / 500mm","2":"https://fotohandeldelfshaven.nl/product/pentacon-six-tl-kit-w-meyer-orestegor-5-6-500mm/","3":"\\nPentacon Six TL kit w/ Meyer Orestegor 5.6 / 500mm\\r\\n\\r\\nPrice: €160,00This Pentacon Six TL comes with a waist level finder.The shutter fires but the curtain tension is too low. it does not fully close. on 125 the shutter stays open, which indicates the camera could use some service and a good clean.\\r\\nAdd to cartPentacon Six TL kit w/ Meyer Orestegor 5.6 / 500mmMaartenNovember 7, 2023November 7, 2023","4":"€160,00","5":"250","6":"€160,00","7":"not_sold_sold_before"},{"1":"Nicca Yashica YF rangefinder + 5cm F/1.8 lens, OUTLET","2":"https://fotohandeldelfshaven.nl/product/nicca-yashica-yf-rangefinder-5cm-f-1-8-lens-outlet/","3":"\\nNicca Yashica YF rangefinder + 5cm F/1.8 lens, OUTLET\\r\\n\\r\\nPrice: €280,00Early Yashica rangefinder with old Nicca marking on front. Sold as collectors piece in non working condition. The shutter does fire and you can get lucky with exposures, however they were tested and found to be irregular and uneven at most speeds. Lower speeds actually shoot as bulb mode. Take  .....\\r\\nAdd to cartNicca Yashica YF rangefinder + 5cm F/1.8 lens, OUTLETMaartenNovember 7, 2023November 7, 2023","4":"€280,00","5":"250","6":"€280,00","7":"not_sold_sold_before"},{"1":"Lot of various Nikon F accessories","2":"https://fotohandeldelfshaven.nl/product/lot-of-various-nikon-f-accessories/","3":"\\nLot of various Nikon F accessories\\r\\n\\r\\nPrice: €60,00This lot contains various random Nikon F related accessories or parts. Included: a dented metered prism finder (untested). DL-1 attachment, film cannistersin case, flash shoe adapter and 2 leather cases with Nikon logo. 1 probbably for Plain prism finder. all in used and somewhat worn conditions, sold as bargain lot  .....\\r\\nAdd to cartLot of various Nikon F accessoriesMaartenNovember 7, 2023November 7, 2023","4":"€60,00","5":"250","6":"€60,00","7":"not_sold_sold_before"}],"options":{"columns":{"min":{},"max":[10],"total":[7]},"rows":{"min":[10],"max":[10],"total":[6]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5saWJyYXJ5KGx1YnJpZGF0ZSlcblxuIyBHZXQgdGhlIGRhdGUgb2YgeWVzdGVyZGF5XG55ZXN0ZXJkYXkgPC0gU3lzLkRhdGUoKSAtIGRheXMoMSlcbmQgJT4lIGhlYWQoMzApXG5kICU+JSBjb3VudChkYXRlX3NvbGQpXG5cbmQgJT4lIFxubXV0YXRlKHN0cl9yZXBsYWNlID0gc3RyX3JlcGxhY2UobmV3X3ByaWNlLCBcIiwwMFwiLCBcIlwiKSxcbiAgdGV4dF9jb2x1bW4gPSBhcy5udW1lcmljKHN0cl9yZXBsYWNlKHN0cl9yZXBsYWNlLCBcIuKCrFwiLCBcIlwiKSkpICU+JSBcblxuXG4gIG11dGF0ZShcbiAgICBkYXRlX3NvbGRfbmV3ID0gaWZfZWxzZSgobmV3X3ByaWNlID09J3NvbGQnKSAmKCBwcmljZXMhPSdzb2xkJyksYXMuY2hhcmFjdGVyKFN5cy5EYXRlKCkpLGRhdGVfc29sZCkpICU+JSBcbiAgbXV0YXRlKGRhdGVfc29sZCA9IGRhdGVfc29sZF9uZXcpXG5gYGAifQ== -->
+<pre class="r"><code>
+library(lubridate)
+
+# Get the date of yesterday
+yesterday &lt;- Sys.Date() - days(1)
+d %&gt;% head(30)
+d %&gt;% count(date_sold)
+
+d %&gt;% 
+mutate(str_replace = str_replace(new_price, &quot;,00&quot;, &quot;&quot;),
+  text_column = as.numeric(str_replace(str_replace, &quot;€&quot;, &quot;&quot;))) %&gt;% 
+
+
+  mutate(
+    date_sold_new = if_else((new_price ==&#39;sold&#39;) &amp;( prices!=&#39;sold&#39;),as.character(Sys.Date()),date_sold)) %&gt;% 
+  mutate(date_sold = date_sold_new)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jMjAyMy0xMS0wNy1wM1xubGlicmFyeShydmVzdClcbmxpYnJhcnkodGlkeXIpXG5saWJyYXJ5KGRwbHlyKVxubGlicmFyeShyZWFkcilcbmxpYnJhcnkoZnMpICAjIEZvciB3b3JraW5nIHdpdGggdGhlIGZpbGUgc3lzdGVtXG5saWJyYXJ5KHB1cnJyKVxubGlicmFyeShtYWdyaXR0cilcbmxpYnJhcnkoc3RyaW5ncilcblxuXG5nZXRfcHJpY2VfaW5mbyA8LSBmdW5jdGlvbijigKYpIHtcbiAgYXJncyA8LSBsaXN0KOKApilcbiAgaWYgKGdyZXBsKGFyZ3MkcHJpY2VzLCAnc29sZCcpKSB7XG4gICAgcHJpY2UgPSAnc29sZCdcbiAgfSBlbHNlIHtcbiAgICBwcmljZSA8LSAgIHJlYWRfaHRtbChhcmdzJGxpbmtzKSB8PlxuICAgICAgaHRtbF9lbGVtZW50cyh4cGF0aCA9ICcvLypbY29udGFpbnMoY29uY2F0KCBcIiBcIiwgQGNsYXNzLCBcIiBcIiApLCBjb25jYXQoIFwiIFwiLCBcInByaWNlXCIsIFwiIFwiICkpXScpIHw+XG4gICAgICBodG1sX3RleHQoKVxuICB9XG4gIFxuICByZXR1cm4oYXMuY2hhcmFjdGVyKHByaWNlKSlcbn1cblxuXG4jIGdldCB0aGUgbGF0ZXN0IGRhdGEgZmlsZSBzdG9yZWRcbmZvbGRlcl9wYXRoIDwtIFwiZGF0YVwiXG5maWxlX2xpc3QgPC1cbiAgZnM6OmRpcl9scyhmb2xkZXJfcGF0aCwgZnVsbC5uYW1lcyA9IFRSVUUsIHBhdHRlcm4gPSBcIlxcXFwuY3N2JFwiKVxuZmlsZV9pbmZvIDwtIGZpbGVfaW5mbyhmaWxlX2xpc3QpXG5sYXRlc3RfZmlsZV9pbmRleCA8LSB3aGljaC5tYXgoZmlsZV9pbmZvJG1vZGlmaWNhdGlvbl90aW1lKVxubGF0ZXN0X2ZpbGVfcGF0aCA8LSBmaWxlX2xpc3RbbGF0ZXN0X2ZpbGVfaW5kZXhdXG5sYXRlc3RfZGF0YSA8LSByZWFkX2NzdihsYXRlc3RfZmlsZV9wYXRoKVxubl9vbGRfcGFnZXMgPC0gbGF0ZXN0X2RhdGEgfD5cbiAgaGVhZCgxKSB8PlxuICBwdWxsKG5fcGFnZSlcblxubGlzdF9wYWdlIDwtICdodHRwczovL2ZvdG9oYW5kZWxkZWxmc2hhdmVuLm5sL3dpbmtlbC8/b3JkZXJieT1kYXRlJ1xuXG5nZXRfZGYgPC0gZnVuY3Rpb24obGlzdF9wYWdlKSB7XG4gIHRpdGxlcyA8LSAgIHJlYWRfaHRtbChsaXN0X3BhZ2UpIHw+XG4gICAgaHRtbF9lbGVtZW50cyh4cGF0aCA9ICcvLypbY29udGFpbnMoY29uY2F0KCBcIiBcIiwgQGNsYXNzLCBcIiBcIiApLCBjb25jYXQoIFwiIFwiLCBcIndvb2NvbW1lcmNlLWxvb3AtcHJvZHVjdF9fdGl0bGVcIiwgXCIgXCIgKSldJykgfD5cbiAgICBodG1sX3RleHQoKVxuICBcbiAgbGlua3MgPC0gcmVhZF9odG1sKGxpc3RfcGFnZSkgfD5cbiAgICBodG1sX2VsZW1lbnRzKHhwYXRoID0gJy8vKltjb250YWlucyhjb25jYXQoIFwiIFwiLCBAY2xhc3MsIFwiIFwiICksIGNvbmNhdCggXCIgXCIsIFwiaG9uZ28tTG9vcFByb2R1Y3QtbGlua1wiLCBcIiBcIiApKV0nKSB8PlxuICAgIGh0bWxfYXR0cihcImhyZWZcIilcbiAgXG4gIHRleHQgPC0gcmVhZF9odG1sKGxpc3RfcGFnZSkgfD5cbiAgICBodG1sX2VsZW1lbnRzKHhwYXRoID0gJy8vKltjb250YWlucyhjb25jYXQoIFwiIFwiLCBAY2xhc3MsIFwiIFwiICksIGNvbmNhdCggXCIgXCIsIFwicHJvZHVjdC1jb250ZW50LXdyYXBcIiwgXCIgXCIgKSldJykgfD5cbiAgICBodG1sX3RleHQoKVxuICBcbiAgXG4gIHByaWNlcyA8LSAgIHJlYWRfaHRtbChsaXN0X3BhZ2UpIHw+XG4gICAgaHRtbF9lbGVtZW50cyh4cGF0aCA9ICcvLypbY29udGFpbnMoY29uY2F0KCBcIiBcIiwgQGNsYXNzLCBcIiBcIiApLCBjb25jYXQoIFwiIFwiLCBcInByaWNlXCIsIFwiIFwiICkpXScpIHw+XG4gICAgaHRtbF90ZXh0KClcbiAgXG4gIGRmX2l0ZW0gPC0gZGF0YS5mcmFtZSh0aXRsZXMsIGxpbmtzLCB0ZXh0LCBwcmljZXMpXG4gIGRmX2l0ZW1cbn1cblxuXG5uX3BhZ2VzIDwtIHJlYWRfaHRtbChsaXN0X3BhZ2UpICU+JVxuICBodG1sX2VsZW1lbnQoeHBhdGggPSAnLy8qW2NvbnRhaW5zKGNvbmNhdCggXCIgXCIsIEBjbGFzcywgXCIgXCIgKSwgY29uY2F0KCBcIiBcIiwgXCJwYWdlLW51bWJlcnNcIiwgXCIgXCIgKSkgYW5kICgoKGNvdW50KHByZWNlZGluZy1zaWJsaW5nOjoqKSArIDEpID0gNikgYW5kIHBhcmVudDo6KildJykgJT4lXG4gIGh0bWxfdGV4dCgpICU+JVxuICBhcy5udW1lcmljKClcblxuZGZfaXRlbV9maXJzdCA8LSBnZXRfZGYobGlzdF9wYWdlKVxuXG5uX25ld19wYWdlcyA9IDEgKyBuX3BhZ2VzIC0gbl9vbGRfcGFnZXNcblxuZm9yIChwIGluIDI6NSkge1xuICAjU3lzLnNsZWVwKDEpXG4gIHBhZ2UgPC1cbiAgICBwYXN0ZSgnaHR0cHM6Ly9mb3RvaGFuZGVsZGVsZnNoYXZlbi5ubC93aW5rZWwvcGFnZS8nLFxuICAgICAgICAgIHAsXG4gICAgICAgICAgJy8/b3JkZXJieT1kYXRlJyxcbiAgICAgICAgICBzZXAgPSAnJylcbiAgcHJpbnQocGFnZSlcbiAgdGVtX2RmIDwtICBnZXRfZGYocGFnZSlcbiAgZGZfaXRlbV9maXJzdCA8LSBiaW5kX3Jvd3MoZGZfaXRlbV9maXJzdCwgdGVtX2RmKVxufVxuXG5cbmRmX2l0ZW1fZmlyc3QgPC0gZGZfaXRlbV9maXJzdCB8PlxuICBtdXRhdGUobl9wYWdlID0gbl9wYWdlcylcblxuXG5hbGxfcmVjZW50X2RhdGEgPC0gYmluZF9yb3dzKGRmX2l0ZW1fZmlyc3QsIGxhdGVzdF9kYXRhKSB8PlxuICBkaXN0aW5jdF9hbGwoKSB8PlxuICBtdXRhdGUocHJpY2VzID0gc3RyX3RvX2xvd2VyKHN0cl9yZXBsYWNlX2FsbChwcmljZXMsIFwiIFwiLCBcIlwiKSksXG4gICAgICAgICBwcmljZXMgPSBzdHJfdG9fbG93ZXIoc3RyX3JlcGxhY2VfYWxsKHByaWNlcywgXCJwcmljZTpcIiwgXCJcIikpLFxuICApICU+JSBcbiAgZGlzdGluY3QoKVxuIyBBcHBseSB0aGUgZnVuY3Rpb24gdG8gZWFjaCByb3cgYW5kIHN0b3JlIHRoZSByZXN1bHRzIGluIGEgbmV3IGNvbHVtblxuI2FsbF9yZWNlbnRfZGF0YTIgPC0gYWxsX3JlY2VudF9kYXRhICU+JVxuYWxsX3JlY2VudF9kYXRhX3NvbGRfaW5mbyA8LSBhbGxfcmVjZW50X2RhdGEgJT4lXG4gIG11dGF0ZShcbiAgICBuZXdfcHJpY2UgPSBwbWFwX2NociguLCBnZXRfcHJpY2VfaW5mbyksXG4gICAgbmV3X3ByaWNlID0gc3RyX3RvX2xvd2VyKHN0cl9yZXBsYWNlX2FsbChuZXdfcHJpY2UsIFwiIFwiLCBcIlwiKSksXG4gICAgbmV3X3ByaWNlID0gc3RyX3RvX2xvd2VyKHN0cl9yZXBsYWNlX2FsbChuZXdfcHJpY2UsIFwicHJpY2U6XCIsIFwiXCIpKSxcbiAgICBkYXRlX3NvbGQgPSBpZl9lbHNlKFxuICAgICAgKG5ld19wcmljZSAhPSBwcmljZXMpICYgKGRhdGVfc29sZCE9J25vdF9zb2xkX3NvbGRfYmVmb3JlJyksXG4gICAgICBhcy5jaGFyYWN0ZXIoU3lzLkRhdGUoKSksXG4gICAgICBpZl9lbHNlKGRhdGVfc29sZCE9J25vdF9zb2xkX3NvbGRfYmVmb3JlJyxkYXRlX3NvbGQsJ25vdF9zb2xkX3NvbGRfYmVmb3JlJylcbiAgICApXG4gIClcbmBgYCJ9 -->
+<pre class="r"><code>
+#2023-11-07-p3
+library(rvest)
+library(tidyr)
+library(dplyr)
+library(readr)
+library(fs)  # For working with the file system
+library(purrr)
+library(magrittr)
+library(stringr)
+
+
+get_price_info &lt;- function(…) {
+  args &lt;- list(…)
+  if (grepl(args$prices, &#39;sold&#39;)) {
+    price = &#39;sold&#39;
+  } else {
+    price &lt;-   read_html(args$links) |&gt;
+      html_elements(xpath = &#39;//*[contains(concat( &quot; &quot;, @class, &quot; &quot; ), concat( &quot; &quot;, &quot;price&quot;, &quot; &quot; ))]&#39;) |&gt;
+      html_text()
+  }
+  
+  return(as.character(price))
+}
+
+
+# get the latest data file stored
+folder_path &lt;- &quot;data&quot;
+file_list &lt;-
+  fs::dir_ls(folder_path, full.names = TRUE, pattern = &quot;\\.csv$&quot;)
+file_info &lt;- file_info(file_list)
+latest_file_index &lt;- which.max(file_info$modification_time)
+latest_file_path &lt;- file_list[latest_file_index]
+latest_data &lt;- read_csv(latest_file_path)
+n_old_pages &lt;- latest_data |&gt;
+  head(1) |&gt;
+  pull(n_page)
+
+list_page &lt;- &#39;https://fotohandeldelfshaven.nl/winkel/?orderby=date&#39;
+
+get_df &lt;- function(list_page) {
+  titles &lt;-   read_html(list_page) |&gt;
+    html_elements(xpath = &#39;//*[contains(concat( &quot; &quot;, @class, &quot; &quot; ), concat( &quot; &quot;, &quot;woocommerce-loop-product__title&quot;, &quot; &quot; ))]&#39;) |&gt;
+    html_text()
+  
+  links &lt;- read_html(list_page) |&gt;
+    html_elements(xpath = &#39;//*[contains(concat( &quot; &quot;, @class, &quot; &quot; ), concat( &quot; &quot;, &quot;hongo-LoopProduct-link&quot;, &quot; &quot; ))]&#39;) |&gt;
+    html_attr(&quot;href&quot;)
+  
+  text &lt;- read_html(list_page) |&gt;
+    html_elements(xpath = &#39;//*[contains(concat( &quot; &quot;, @class, &quot; &quot; ), concat( &quot; &quot;, &quot;product-content-wrap&quot;, &quot; &quot; ))]&#39;) |&gt;
+    html_text()
+  
+  
+  prices &lt;-   read_html(list_page) |&gt;
+    html_elements(xpath = &#39;//*[contains(concat( &quot; &quot;, @class, &quot; &quot; ), concat( &quot; &quot;, &quot;price&quot;, &quot; &quot; ))]&#39;) |&gt;
+    html_text()
+  
+  df_item &lt;- data.frame(titles, links, text, prices)
+  df_item
+}
+
+
+n_pages &lt;- read_html(list_page) %&gt;%
+  html_element(xpath = &#39;//*[contains(concat( &quot; &quot;, @class, &quot; &quot; ), concat( &quot; &quot;, &quot;page-numbers&quot;, &quot; &quot; )) and (((count(preceding-sibling::*) + 1) = 6) and parent::*)]&#39;) %&gt;%
+  html_text() %&gt;%
+  as.numeric()
+
+df_item_first &lt;- get_df(list_page)
+
+n_new_pages = 1 + n_pages - n_old_pages
+
+for (p in 2:5) {
+  #Sys.sleep(1)
+  page &lt;-
+    paste(&#39;https://fotohandeldelfshaven.nl/winkel/page/&#39;,
+          p,
+          &#39;/?orderby=date&#39;,
+          sep = &#39;&#39;)
+  print(page)
+  tem_df &lt;-  get_df(page)
+  df_item_first &lt;- bind_rows(df_item_first, tem_df)
+}
+
+
+df_item_first &lt;- df_item_first |&gt;
+  mutate(n_page = n_pages)
+
+
+all_recent_data &lt;- bind_rows(df_item_first, latest_data) |&gt;
+  distinct_all() |&gt;
+  mutate(prices = str_to_lower(str_replace_all(prices, &quot; &quot;, &quot;&quot;)),
+         prices = str_to_lower(str_replace_all(prices, &quot;price:&quot;, &quot;&quot;)),
+  ) %&gt;% 
+  distinct()
+# Apply the function to each row and store the results in a new column
+#all_recent_data2 &lt;- all_recent_data %&gt;%
+all_recent_data_sold_info &lt;- all_recent_data %&gt;%
+  mutate(
+    new_price = pmap_chr(., get_price_info),
+    new_price = str_to_lower(str_replace_all(new_price, &quot; &quot;, &quot;&quot;)),
+    new_price = str_to_lower(str_replace_all(new_price, &quot;price:&quot;, &quot;&quot;)),
+    date_sold = if_else(
+      (new_price != prices) &amp; (date_sold!=&#39;not_sold_sold_before&#39;),
+      as.character(Sys.Date()),
+      if_else(date_sold!=&#39;not_sold_sold_before&#39;,date_sold,&#39;not_sold_sold_before&#39;)
+    )
+  )</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpgYGB7cn0NCmxpYnJhcnkodGlkeXZlcnNlKQ0KYGBgDQoNCmBgYHtyfQ0KZCA8LSAgcmVhZF9jc3YoJy4uL2RhdGEvZm90b2hhbmRlbGRlbGZzaGF2ZW5fMjAyMy0xMS0wNy5jc3YnKQ0KYGBgDQoNCmBgYHtyfQ0KZCAlPiUgaGVhZCgpDQpgYGANCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpgYGB7cn0NCmxpYnJhcnkodGlkeXZlcnNlKQ0KYGBgDQoNCmBgYHtyfQ0KZCA8LSAgcmVhZF9jc3YoJy4uL2RhdGEvZm90b2hhbmRlbGRlbGZzaGF2ZW5fMjAyMy0xMS0wOS5jc3YnKQ0KYGBgDQoNCmBgYHtyfQ0KDQpsaWJyYXJ5KGx1YnJpZGF0ZSkNCg0KIyBHZXQgdGhlIGRhdGUgb2YgeWVzdGVyZGF5DQp5ZXN0ZXJkYXkgPC0gU3lzLkRhdGUoKSAtIGRheXMoMSkNCmQgJT4lIGhlYWQoMzApDQpkICU+JSBjb3VudChkYXRlX3NvbGQpDQoNCmQgJT4lIA0KbXV0YXRlKHN0cl9yZXBsYWNlID0gc3RyX3JlcGxhY2UobmV3X3ByaWNlLCAiLDAwIiwgIiIpLA0KICB0ZXh0X2NvbHVtbiA9IGFzLm51bWVyaWMoc3RyX3JlcGxhY2Uoc3RyX3JlcGxhY2UsICLigqwiLCAiIikpKSAlPiUgDQoNCg0KICBtdXRhdGUoDQogICAgZGF0ZV9zb2xkX25ldyA9IGlmX2Vsc2UoKG5ld19wcmljZSA9PSdzb2xkJykgJiggcHJpY2VzIT0nc29sZCcpLGFzLmNoYXJhY3RlcihTeXMuRGF0ZSgpKSxkYXRlX3NvbGQpKSAlPiUgDQogIG11dGF0ZShkYXRlX3NvbGQgPSBkYXRlX3NvbGRfbmV3KQ0KYGBgDQoNCmBgYHtyfQ0KDQojMjAyMy0xMS0wNy1wMw0KbGlicmFyeShydmVzdCkNCmxpYnJhcnkodGlkeXIpDQpsaWJyYXJ5KGRwbHlyKQ0KbGlicmFyeShyZWFkcikNCmxpYnJhcnkoZnMpICAjIEZvciB3b3JraW5nIHdpdGggdGhlIGZpbGUgc3lzdGVtDQpsaWJyYXJ5KHB1cnJyKQ0KbGlicmFyeShtYWdyaXR0cikNCmxpYnJhcnkoc3RyaW5ncikNCg0KDQpnZXRfcHJpY2VfaW5mbyA8LSBmdW5jdGlvbijigKYpIHsNCiAgYXJncyA8LSBsaXN0KOKApikNCiAgaWYgKGdyZXBsKGFyZ3MkcHJpY2VzLCAnc29sZCcpKSB7DQogICAgcHJpY2UgPSAnc29sZCcNCiAgfSBlbHNlIHsNCiAgICBwcmljZSA8LSAgIHJlYWRfaHRtbChhcmdzJGxpbmtzKSB8Pg0KICAgICAgaHRtbF9lbGVtZW50cyh4cGF0aCA9ICcvLypbY29udGFpbnMoY29uY2F0KCAiICIsIEBjbGFzcywgIiAiICksIGNvbmNhdCggIiAiLCAicHJpY2UiLCAiICIgKSldJykgfD4NCiAgICAgIGh0bWxfdGV4dCgpDQogIH0NCiAgDQogIHJldHVybihhcy5jaGFyYWN0ZXIocHJpY2UpKQ0KfQ0KDQoNCiMgZ2V0IHRoZSBsYXRlc3QgZGF0YSBmaWxlIHN0b3JlZA0KZm9sZGVyX3BhdGggPC0gImRhdGEiDQpmaWxlX2xpc3QgPC0NCiAgZnM6OmRpcl9scyhmb2xkZXJfcGF0aCwgZnVsbC5uYW1lcyA9IFRSVUUsIHBhdHRlcm4gPSAiXFwuY3N2JCIpDQpmaWxlX2luZm8gPC0gZmlsZV9pbmZvKGZpbGVfbGlzdCkNCmxhdGVzdF9maWxlX2luZGV4IDwtIHdoaWNoLm1heChmaWxlX2luZm8kbW9kaWZpY2F0aW9uX3RpbWUpDQpsYXRlc3RfZmlsZV9wYXRoIDwtIGZpbGVfbGlzdFtsYXRlc3RfZmlsZV9pbmRleF0NCmxhdGVzdF9kYXRhIDwtIHJlYWRfY3N2KGxhdGVzdF9maWxlX3BhdGgpDQpuX29sZF9wYWdlcyA8LSBsYXRlc3RfZGF0YSB8Pg0KICBoZWFkKDEpIHw+DQogIHB1bGwobl9wYWdlKQ0KDQpsaXN0X3BhZ2UgPC0gJ2h0dHBzOi8vZm90b2hhbmRlbGRlbGZzaGF2ZW4ubmwvd2lua2VsLz9vcmRlcmJ5PWRhdGUnDQoNCmdldF9kZiA8LSBmdW5jdGlvbihsaXN0X3BhZ2UpIHsNCiAgdGl0bGVzIDwtICAgcmVhZF9odG1sKGxpc3RfcGFnZSkgfD4NCiAgICBodG1sX2VsZW1lbnRzKHhwYXRoID0gJy8vKltjb250YWlucyhjb25jYXQoICIgIiwgQGNsYXNzLCAiICIgKSwgY29uY2F0KCAiICIsICJ3b29jb21tZXJjZS1sb29wLXByb2R1Y3RfX3RpdGxlIiwgIiAiICkpXScpIHw+DQogICAgaHRtbF90ZXh0KCkNCiAgDQogIGxpbmtzIDwtIHJlYWRfaHRtbChsaXN0X3BhZ2UpIHw+DQogICAgaHRtbF9lbGVtZW50cyh4cGF0aCA9ICcvLypbY29udGFpbnMoY29uY2F0KCAiICIsIEBjbGFzcywgIiAiICksIGNvbmNhdCggIiAiLCAiaG9uZ28tTG9vcFByb2R1Y3QtbGluayIsICIgIiApKV0nKSB8Pg0KICAgIGh0bWxfYXR0cigiaHJlZiIpDQogIA0KICB0ZXh0IDwtIHJlYWRfaHRtbChsaXN0X3BhZ2UpIHw+DQogICAgaHRtbF9lbGVtZW50cyh4cGF0aCA9ICcvLypbY29udGFpbnMoY29uY2F0KCAiICIsIEBjbGFzcywgIiAiICksIGNvbmNhdCggIiAiLCAicHJvZHVjdC1jb250ZW50LXdyYXAiLCAiICIgKSldJykgfD4NCiAgICBodG1sX3RleHQoKQ0KICANCiAgDQogIHByaWNlcyA8LSAgIHJlYWRfaHRtbChsaXN0X3BhZ2UpIHw+DQogICAgaHRtbF9lbGVtZW50cyh4cGF0aCA9ICcvLypbY29udGFpbnMoY29uY2F0KCAiICIsIEBjbGFzcywgIiAiICksIGNvbmNhdCggIiAiLCAicHJpY2UiLCAiICIgKSldJykgfD4NCiAgICBodG1sX3RleHQoKQ0KICANCiAgZGZfaXRlbSA8LSBkYXRhLmZyYW1lKHRpdGxlcywgbGlua3MsIHRleHQsIHByaWNlcykNCiAgZGZfaXRlbQ0KfQ0KDQoNCm5fcGFnZXMgPC0gcmVhZF9odG1sKGxpc3RfcGFnZSkgJT4lDQogIGh0bWxfZWxlbWVudCh4cGF0aCA9ICcvLypbY29udGFpbnMoY29uY2F0KCAiICIsIEBjbGFzcywgIiAiICksIGNvbmNhdCggIiAiLCAicGFnZS1udW1iZXJzIiwgIiAiICkpIGFuZCAoKChjb3VudChwcmVjZWRpbmctc2libGluZzo6KikgKyAxKSA9IDYpIGFuZCBwYXJlbnQ6OiopXScpICU+JQ0KICBodG1sX3RleHQoKSAlPiUNCiAgYXMubnVtZXJpYygpDQoNCmRmX2l0ZW1fZmlyc3QgPC0gZ2V0X2RmKGxpc3RfcGFnZSkNCg0Kbl9uZXdfcGFnZXMgPSAxICsgbl9wYWdlcyAtIG5fb2xkX3BhZ2VzDQoNCmZvciAocCBpbiAyOjUpIHsNCiAgI1N5cy5zbGVlcCgxKQ0KICBwYWdlIDwtDQogICAgcGFzdGUoJ2h0dHBzOi8vZm90b2hhbmRlbGRlbGZzaGF2ZW4ubmwvd2lua2VsL3BhZ2UvJywNCiAgICAgICAgICBwLA0KICAgICAgICAgICcvP29yZGVyYnk9ZGF0ZScsDQogICAgICAgICAgc2VwID0gJycpDQogIHByaW50KHBhZ2UpDQogIHRlbV9kZiA8LSAgZ2V0X2RmKHBhZ2UpDQogIGRmX2l0ZW1fZmlyc3QgPC0gYmluZF9yb3dzKGRmX2l0ZW1fZmlyc3QsIHRlbV9kZikNCn0NCg0KDQpkZl9pdGVtX2ZpcnN0IDwtIGRmX2l0ZW1fZmlyc3QgfD4NCiAgbXV0YXRlKG5fcGFnZSA9IG5fcGFnZXMpDQoNCg0KYWxsX3JlY2VudF9kYXRhIDwtIGJpbmRfcm93cyhkZl9pdGVtX2ZpcnN0LCBsYXRlc3RfZGF0YSkgfD4NCiAgZGlzdGluY3RfYWxsKCkgfD4NCiAgbXV0YXRlKHByaWNlcyA9IHN0cl90b19sb3dlcihzdHJfcmVwbGFjZV9hbGwocHJpY2VzLCAiICIsICIiKSksDQogICAgICAgICBwcmljZXMgPSBzdHJfdG9fbG93ZXIoc3RyX3JlcGxhY2VfYWxsKHByaWNlcywgInByaWNlOiIsICIiKSksDQogICkgJT4lIA0KICBkaXN0aW5jdCgpDQojIEFwcGx5IHRoZSBmdW5jdGlvbiB0byBlYWNoIHJvdyBhbmQgc3RvcmUgdGhlIHJlc3VsdHMgaW4gYSBuZXcgY29sdW1uDQojYWxsX3JlY2VudF9kYXRhMiA8LSBhbGxfcmVjZW50X2RhdGEgJT4lDQphbGxfcmVjZW50X2RhdGFfc29sZF9pbmZvIDwtIGFsbF9yZWNlbnRfZGF0YSAlPiUNCiAgbXV0YXRlKA0KICAgIG5ld19wcmljZSA9IHBtYXBfY2hyKC4sIGdldF9wcmljZV9pbmZvKSwNCiAgICBuZXdfcHJpY2UgPSBzdHJfdG9fbG93ZXIoc3RyX3JlcGxhY2VfYWxsKG5ld19wcmljZSwgIiAiLCAiIikpLA0KICAgIG5ld19wcmljZSA9IHN0cl90b19sb3dlcihzdHJfcmVwbGFjZV9hbGwobmV3X3ByaWNlLCAicHJpY2U6IiwgIiIpKSwNCiAgICBkYXRlX3NvbGQgPSBpZl9lbHNlKA0KICAgICAgKG5ld19wcmljZSAhPSBwcmljZXMpICYgKGRhdGVfc29sZCE9J25vdF9zb2xkX3NvbGRfYmVmb3JlJyksDQogICAgICBhcy5jaGFyYWN0ZXIoU3lzLkRhdGUoKSksDQogICAgICBpZl9lbHNlKGRhdGVfc29sZCE9J25vdF9zb2xkX3NvbGRfYmVmb3JlJyxkYXRlX3NvbGQsJ25vdF9zb2xkX3NvbGRfYmVmb3JlJykNCiAgICApDQogICkNCmBgYA0K</div>
 
 
 
