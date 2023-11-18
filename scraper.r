@@ -1,9 +1,4 @@
 
-<<<<<<< HEAD
-#2023-11-07-p5
-=======
-#2023-11-14-p3
->>>>>>> 9f9a5a67344a5acee654911d6c9550e957cb3329
 library(rvest)
 library(tidyr)
 library(dplyr)
