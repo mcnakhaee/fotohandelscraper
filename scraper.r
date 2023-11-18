@@ -13,6 +13,9 @@ library(lubridate)
 yesterday <- Sys.Date() - days(1)
 
 get_price_info <- function(...) {
+  
+  
+  tryCatch({
   args <- list(...)
   if (grepl(args$prices, 'sold')) {
     price = 'sold'
@@ -20,9 +23,14 @@ get_price_info <- function(...) {
     price <-   read_html(args$links) |>
       html_elements(xpath = '//*[contains(concat( " ", @class, " " ), concat( " ", "price", " " ))]') |>
       html_text()
+    return(as.character(price))
   }
+  }, error = function(e) {
+    price <- ''
+    return(price)
+  })
   
-  return(as.character(price))
+  
 }
 
 
@@ -98,13 +106,16 @@ all_recent_data_sold_info <- all_recent_data %>%
   mutate(prices = str_to_lower(str_replace_all(prices, " ", "")),
          prices = str_to_lower(str_replace_all(prices, "price:", ""))) %>% 
   mutate(
-    date_sold = yesterday,
+    #date_sold = yesterday,
     new_price = pmap_chr(., get_price_info),
     new_price = str_to_lower(str_replace_all(new_price, " ", "")),
     new_price = str_to_lower(str_replace_all(new_price, "price:", ""))) %>% 
   mutate(
       date_sold_new = if_else((new_price =='sold') &( prices!='sold'),as.character(Sys.Date()),as.character(date_sold))) %>% 
   mutate(date_sold = date_sold_new)
+
+
+
 
 
 
