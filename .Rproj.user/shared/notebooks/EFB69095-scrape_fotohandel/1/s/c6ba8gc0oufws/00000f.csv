@@ -1,8 +1,0 @@
-"0"," read_html(test_path) |>
-  html_element(xpath =xpath_optical ) |>
-  html_text()
-"
-"1","[1]"
-"1"," ""No issues which will affect images"""
-"1","
-"
